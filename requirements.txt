@@ -355,7 +355,6 @@ future==1.0.0 \
     --hash=sha256:bd2968309307861edae1458a4f8a4f3598c03be43b97521076aebf5d94c07b05
     # via geocoder
 geemap @ git+https://github.com/gee-community/geemap.git@c425b8ec9f5ad152d898a3b21335f89f9df37eb7
-    # via satschool
 geocoder==1.38.1 \
     --hash=sha256:a733e1dfbce3f4e1a526cac03aadcedb8ed1239cf55bd7f3a23c60075121a834 \
     --hash=sha256:c9925374c961577d0aee403b09e6f8ea1971d913f011f00ca70c76beaf7a77e7
