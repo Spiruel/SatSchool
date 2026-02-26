@@ -12,7 +12,11 @@ from pages.code.rois import *
 from st_pages import add_indentation
 add_indentation()
 
-@st.cache
+import geemap
+from config import EE_PROJECT
+geemap.ee_initialize(project=EE_PROJECT)  # wraps ee.Authenticate + ee.Initialize
+
+@st.cache_data
 def uploaded_file_to_gdf(data):
     import tempfile
     import os
@@ -57,13 +61,13 @@ st.session_state["vis_params"] = None
 
 with row1_col1:
     m = geemap.Map(
-        basemap="HYBRID",
         plugin_Draw=True,
         draw_export=True,
         locate_control=True,
         plugin_LatLngPopup=False,
+        basemap=geemap.basemaps.get("Esri.WorldStreetMap")
     )
-    m.add_basemap("ROADMAP")
+    #m.add_basemap("ROADMAP")
 
 with row1_col2:
 

@@ -101,13 +101,13 @@ with cola:
   classifier_button = st.button('🪄 Run classifier! 🪄')
 
 with colb:
-  Map = geemap.Map(zoom=1)
+  Map = geemap.Map(zoom=1, basemap=geemap.basemaps.get("Esri.WorldStreetMap"))
 
   # Define a region of interest as a point.  Change the coordinates
   # to get a classification of any place where there is imagery.
   roi = ee.Geometry.Point(-122.3942, 37.7295)
 
-  l8 = ee.ImageCollection('LANDSAT/LC08/C01/T1')
+  l8 = ee.ImageCollection('LANDSAT/LC08/C02/T1')
   image = ee.Algorithms.Landsat.simpleComposite(**{
     'collection': l8.filterDate('2018-01-01', '2018-12-31'),
     'asFloat': True,

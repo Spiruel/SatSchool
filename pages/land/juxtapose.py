@@ -36,7 +36,7 @@ st.markdown('''Enjoy exploring the changes in land cover! :four_leaf_clover:''')
 
 
 st.title('Crops in 2017 & 2019 across the continental United States')
-m = geemap.Map(center=(40, -100), zoom=4, height=800)
+m = geemap.Map(center=(40, -100), zoom=4, height=800, basemap=geemap.basemaps.get("Esri.WorldStreetMap"))
 
 dataset2019 = ee.ImageCollection('USDA/NASS/CDL')\
                   .filter(ee.Filter.date('2019-01-01', '2019-12-31'))\

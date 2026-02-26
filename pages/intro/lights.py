@@ -1,6 +1,7 @@
 import geemap.foliumap as geemap
 import ee
-ee.Initialize(project='ee-spiruel')
+from config import EE_PROJECT
+ee.Initialize(project=EE_PROJECT)
 
 import streamlit as st
 
@@ -35,10 +36,9 @@ st.markdown('''
 with st.expander("Hint"):
      st.markdown('''Economy and population differences?''')
 
-
-
-Map = geemap.Map(center=(48.37, 7.10), zoom=4)
-Map.set_options("HYBRID")
+# Create the map with the actual basemap object
+Map = geemap.Map(center=(48.37, 7.10), zoom=4, basemap=geemap.basemaps.get("Esri.WorldStreetMap"))
+#Map.set_options("HYBRID")
 
 cola, colb = st.columns([0.25,1])
 year1 = cola.slider("Channel 1 - Red", 1993, 2013, 2013)

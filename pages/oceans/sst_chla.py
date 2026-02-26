@@ -8,6 +8,10 @@ import streamlit as st
 import altair as alt
 import numpy as np
 
+import geemap
+from config import EE_PROJECT
+geemap.ee_initialize(project=EE_PROJECT)  # wraps ee.Authenticate + ee.Initialize
+
 from st_pages import add_indentation
 add_indentation()
 
@@ -60,8 +64,8 @@ with cola:
     chla_check_cont = st.container()
 
 with colb:
-    m = geemap.Map(locate_control=True,zoom=1)
-    m.add_basemap("HYBRID")
+    m = geemap.Map(locate_control=True, zoom=1, basemap=geemap.basemaps.get("Esri.WorldStreetMap"))
+    #m.add_basemap("HYBRID")
 
     #NOAA/CDR/SST_WHOI/V2
     dataset = ee.ImageCollection('NASA/OCEANDATA/MODIS-Aqua/L3SMI') \
