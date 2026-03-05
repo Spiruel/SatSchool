@@ -5,19 +5,33 @@ description = "Add your description here"
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
+    "anywidget>=0.9.21",
+    "bqplot>=0.12.45",
+    "earthengine-api>=1.7.16",
     "eemont>=2025.7.1",
+    "eerepr>=0.1.2",
     "extra-streamlit-components>=0.1.81",
+    "folium>=0.20.0",
     "geemap",
+    "geocoder>=1.38.1",
     "geopandas>=1.1.2",
+    "ipyevents>=2.0.4",
+    "ipyfilechooser>=0.6.0",
+    "ipyleaflet>=0.20.0",
+    "matplotlib>=3.10.8",
+    "numpy>=1.26.4",
+    "plotly>=6.6.0",
+    "pyperclip>=1.11.0",
+    "python-box<7",
     "randomname>=0.2.1",
+    "requests>=2.32.5",
+    "scooby>=0.11.0",
     "st-pages==0.4.1",
-    "streamlit>=1.43.2",
+    "streamlit==1.43.2",
     "streamlit-ace>=0.1.1",
-    "streamlit-analytics>=0.4.1",
     "streamlit-lottie>=0.0.5",
-    "streamlit-metrics>=0.1.0",
-    "streamlit-option-menu>=0.4.0",
 ]
 
 [tool.uv.sources]
-geemap = { git = "https://github.com/gee-community/geemap.git", rev = "c425b8e" }
+geemap = { path = "geemap-0.37.1.post0-py3-none-any.whl" }
+

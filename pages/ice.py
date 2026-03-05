@@ -121,7 +121,8 @@ visualisation = {
 Map.addLayer(cryosat_dem, visualisation, 'Cryosat DEM')
 
 ############### PUT SOMETHING BELOW HERE TO SHOW THE SUBTRACTED IMAGE
-Map.addLayer(cryosat_dem.subtract(bedrock), {'min': -4000,'max': 4000,'palette': ['001fff', '00ffff', 'fbff00', 'ff0000']}, 'ice-bedrock difference')
+subtracted = cryosat_dem.subtract(bedrock)
+Map.addLayer(subtracted, {'min': -4000,'max': 4000,'palette': ['001fff', '00ffff', 'fbff00', 'ff0000']}, 'ice-bedrock difference')
 
 Map.setCenter(0, 0, 4)''',
 '1':'''#These are the radar images that you will be using. 
